@@ -19,8 +19,7 @@ custom elements in a lazy manner.</p>
 <br><a name="LazyCustomElementRegistry"></a>
 
 # LazyCustomElementRegistry
-> The LazyCustomElementRegistry class is a custom element registry for defining and upgrading
-> custom elements in a lazy manner.
+> The LazyCustomElementRegistry class is a custom element registry for defining and upgrading> custom elements in a lazy manner.
 
 
 * [LazyCustomElementRegistry](#LazyCustomElementRegistry)
@@ -48,9 +47,7 @@ custom elements in a lazy manner.</p>
 <br><a name="LazyCustomElementRegistry+define"></a>
 
 ## lazyCustomElementRegistry.define(name, constructor, [options]) ⇒ [<code>LazyCustomElementRegistry</code>](#LazyCustomElementRegistry)
-> Equivalent of customElements.define() but supporting async definition and additional
-> features. Define a custom element or custom built-in element, potentially in a lazy way, by
-> passing an async callback that resolve to the Class
+> Equivalent of customElements.define() but supporting async definition and additional> features. Define a custom element or custom built-in element, potentially in a lazy way, by> passing an async callback that resolve to the Class
 
 **Returns**: [<code>LazyCustomElementRegistry</code>](#LazyCustomElementRegistry) - return itself to allow for chain calls  
 
@@ -78,14 +75,9 @@ custom elements in a lazy manner.</p>
 <br><a name="LazyCustomElementRegistry+get"></a>
 
 ## lazyCustomElementRegistry.get(name) ⇒ <code>Promise.&lt;(function()\|undefined)&gt;</code>
-> Async version of CustomElementRegistry.get method. Retrieve a previously defined constructor
-> for a given custom element name. It resolves late definitions made from a mixin in the form:
-> const ClassName = (Base) => class extends Base {}. It also implements (through subclassing)
-> the logic to deal with a firstConnectedCallback() method when the feature is enabled and the
-> method is available in the defined constructor.
+> Async version of CustomElementRegistry.get method. Retrieve a previously defined constructor> for a given custom element name. It resolves late definitions made from a mixin in the form:> const ClassName = (Base) => class extends Base {}. It also implements (through subclassing)> the logic to deal with a firstConnectedCallback() method when the feature is enabled and the> method is available in the defined constructor.
 
-**Returns**: <code>Promise.&lt;(function()\|undefined)&gt;</code> - resolves to a previously defined constructor or to
-undefined  
+**Returns**: <code>Promise.&lt;(function()\|undefined)&gt;</code> - resolves to a previously defined constructor or toundefined  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -95,8 +87,7 @@ undefined
 <br><a name="LazyCustomElementRegistry+upgrade"></a>
 
 ## lazyCustomElementRegistry.upgrade(root)
-> Async version of CustomElementRegistry.upgrade method. First it resolves all the lazy defined
-> elements, then proceed to upgrade them.
+> Async version of CustomElementRegistry.upgrade method. First it resolves all the lazy defined> elements, then proceed to upgrade them.
 
 
 | Param | Type | Description |
@@ -119,8 +110,7 @@ undefined
 <br><a name="LazyCustomElementRegistry+upgradeElement"></a>
 
 ## lazyCustomElementRegistry.upgradeElement(element)
-> Same feature provided by [upgrade](#LazyCustomElementRegistry+upgrade) but without forcing the
-> definition of lazy defined descendants.
+> Same feature provided by [upgrade](#LazyCustomElementRegistry+upgrade) but without forcing the> definition of lazy defined descendants.
 
 
 | Param | Type | Description |
@@ -131,8 +121,7 @@ undefined
 <br><a name="LazyCustomElementRegistry+upgradeElements"></a>
 
 ## lazyCustomElementRegistry.upgradeElements(elements)
-> Same feature provided by [upgrade](#LazyCustomElementRegistry+upgrade) but for a list of elements
-> and without forcing the definition of lazy defined descendants.
+> Same feature provided by [upgrade](#LazyCustomElementRegistry+upgrade) but for a list of elements> and without forcing the definition of lazy defined descendants.
 
 
 | Param | Type | Description |
@@ -143,8 +132,7 @@ undefined
 <br><a name="LazyCustomElementRegistry+querySelector"></a>
 
 ## lazyCustomElementRegistry.querySelector(node, selectors) ⇒ <code>Element</code>
-> Async equivalent of node.querySelector() followed by forcing a definition of the eventually
-> lazy defined custom element and an upgrade of the found element.
+> Async equivalent of node.querySelector() followed by forcing a definition of the eventually> lazy defined custom element and an upgrade of the found element.
 
 **Returns**: <code>Element</code> - returns the found element or null  
 
@@ -157,11 +145,9 @@ undefined
 <br><a name="LazyCustomElementRegistry+querySelectorAll"></a>
 
 ## lazyCustomElementRegistry.querySelectorAll(node, selectors) ⇒ <code>NodeList</code>
-> Async equivalent of node.querySelectorAll() followed by forcing a definition of the
-> eventually lazy defined custom elements and an upgrade of the found elements.
+> Async equivalent of node.querySelectorAll() followed by forcing a definition of the> eventually lazy defined custom elements and an upgrade of the found elements.
 
-**Returns**: <code>NodeList</code> - returns the found elements NodeList or null in case the node is not an
-instance of Document or Element to be queried  
+**Returns**: <code>NodeList</code> - returns the found elements NodeList or null in case the node is not aninstance of Document or Element to be queried  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -172,23 +158,7 @@ instance of Document or Element to be queried
 <br><a name="LazyCustomElementRegistry+createElement"></a>
 
 ## lazyCustomElementRegistry.createElement(tagName, [options]) ⇒ <code>Element</code>
-> It works exactly like document.createElement with a single additional feature to solve a
-> weird thing. When the standard document.createElement is used to create a custom built-in
-> element (passing an options object as a second parameter, with the "is" property filled), it
-> set the is attribute in a way that is not properly queryable with the usual methods. Let's
-> say you do something like:
-> 
-> ``` javascript
-> class MyCustomParagraph extends HTMLParagraphElement {}
-> customElements.define('my-custom-paragraph', MyCustomParagraph, {extends: 'p'});
-> const p = document.createElement('p', {is: 'my-custom-paragraph});
-> console.log(p.matches('[is="my-custom-paragraph"]'));
-> // unexpectedly it prints false
-> // same if you attach the element in the dom and try to query it by "is" attribute, you will get no results
-> ```
-> 
-> So in those cases, this method forces a setAttribute call with the proper values that allows
-> the element to be queryable as expected.
+> It works exactly like document.createElement with a single additional feature to solve a> weird thing. When the standard document.createElement is used to create a custom built-in> element (passing an options object as a second parameter, with the "is" property filled), it> set the is attribute in a way that is not properly queryable with the usual methods. Let's> say you do something like:> > ``` javascript> class MyCustomParagraph extends HTMLParagraphElement {}> customElements.define('my-custom-paragraph', MyCustomParagraph, {extends: 'p'});> const p = document.createElement('p', {is: 'my-custom-paragraph});> console.log(p.matches('[is="my-custom-paragraph"]'));> // unexpectedly it prints false> // same if you attach the element in the dom and try to query it by "is" attribute, you will get no results> ```> > So in those cases, this method forces a setAttribute call with the proper values that allows> the element to be queryable as expected.
 
 **Returns**: <code>Element</code> - the created Element  
 

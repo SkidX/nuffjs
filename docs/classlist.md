@@ -21,8 +21,7 @@ object).</p>
 <br><a name="ClassList"></a>
 
 # ClassList
-> It provides methods for manipulating and accessing the classList of an Element, with support for
-> namespaces. API almost completely equivalent to Element.classList.
+> It provides methods for manipulating and accessing the classList of an Element, with support for> namespaces. API almost completely equivalent to Element.classList.
 
 **See**: [DOMTokenList](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList)  
 
@@ -58,27 +57,23 @@ object).</p>
 
 ## classList.length : <code>number</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔒 Read only`_
 
-> Getter equivalent to Element.classList.length, but taking the namespace into account. Gets
-> the number of class names that start with the specified namespace.
+> Getter equivalent to Element.classList.length, but taking the namespace into account. Gets> the number of class names that start with the specified namespace.
 
-**See**: [DOMTokenList:
-length](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/length)  
+**See**: [DOMTokenList:length](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/length)  
 
 <br><a name="ClassList+value"></a>
 
 ## classList.value : <code>string</code>
 > Getter / Setter equivalent to Element.classList.value, but taking the namespace into account.
 
-**See**: [DOMTokenList:
-value](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/value)  
+**See**: [DOMTokenList:value](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/value)  
 
 <br><a name="ClassList+add"></a>
 
 ## classList.add(...classes)
 > Equivalent to Element.classList.add(), but taking the namespace into account.
 
-**See**: [DOMTokenList:
-add()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/add)  
+**See**: [DOMTokenList:add()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/add)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -99,8 +94,7 @@ cs.add('one', 'two', 'three'); // adds 'acme-one', 'acme-two', 'acme-three'
 ## classList.remove(...classes)
 > Equivalent to Element.classList.remove(), but taking the namespace into account.
 
-**See**: [DOMTokenList:
-remove()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/remove)  
+**See**: [DOMTokenList:remove()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/remove)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -113,8 +107,7 @@ remove()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/remove)
 > Equivalent to Element.classList.contains(), but taking the namespace into account.
 
 **Returns**: <code>boolean</code> - true if the given class name is set on the element, false otherwise  
-**See**: [DOMTokenList:
-contains()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/contains)  
+**See**: [DOMTokenList:contains()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/contains)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -127,8 +120,7 @@ contains()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/contai
 > Equivalent to Element.classList.toggle(), but taking the namespace into account.
 
 **Returns**: <code>boolean</code> - true when the class name is present after the call, false otherwise  
-**See**: [DOMTokenList:
-toggle()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle)  
+**See**: [DOMTokenList:toggle()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -142,8 +134,7 @@ toggle()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle)
 > Equivalent to Element.classList.replace(), but taking the namespace into account.
 
 **Returns**: <code>boolean</code> - true if oldToken was successfully replaced, or false if not.  
-**See**: [DOMTokenList:
-replace()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/replace)  
+**See**: [DOMTokenList:replace()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/replace)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -157,38 +148,31 @@ replace()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/replace
 > Equivalent to Element.classList.values(), but taking the namespace into account.
 
 **Returns**: <code>array</code> - the iterable array of class names that match with the namespace  
-**See**: [DOMTokenList:
-values()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/values)  
+**See**: [DOMTokenList:values()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/values)  
 
 <br><a name="ClassList+keys"></a>
 
 ## classList.keys() ⇒ <code>array</code>
 > Equivalent to Element.classList.keys(), but taking the namespace into account.
 
-**Returns**: <code>array</code> - the list of indexes, based on the class names list that match with the
-namespace  
-**See**: [DOMTokenList:
-keys()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/keys)  
+**Returns**: <code>array</code> - the list of indexes, based on the class names list that match with thenamespace  
+**See**: [DOMTokenList:keys()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/keys)  
 
 <br><a name="ClassList+entries"></a>
 
 ## classList.entries() ⇒ <code>array</code>
 > Equivalent to Element.classList.entries(), but taking the namespace into account.
 
-**Returns**: <code>array</code> - the iterable list of [index, class name] built with class names that match
-the namespace  
-**See**: [DOMTokenList:
-entries()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/entries)  
+**Returns**: <code>array</code> - the iterable list of [index, class name] built with class names that matchthe namespace  
+**See**: [DOMTokenList:entries()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/entries)  
 
 <br><a name="ClassList+item"></a>
 
 ## classList.item(index) ⇒ <code>string</code>
 > Equivalent to Element.classList.item(), but taking the namespace into account.
 
-**Returns**: <code>string</code> - the class name at the specified index or null when the index is out of
-range  
-**See**: [DOMTokenList:
-item()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/item)  
+**Returns**: <code>string</code> - the class name at the specified index or null when the index is out ofrange  
+**See**: [DOMTokenList:item()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/item)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -200,8 +184,7 @@ item()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/item)
 ## classList.forEach(callback, [context])
 > Equivalent to Element.classList.forEach(), but taking the namespace into account.
 
-**See**: [DOMTokenList:
-forEach()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/forEach)  
+**See**: [DOMTokenList:forEach()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/forEach)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -212,9 +195,7 @@ forEach()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/forEach
 <br><a name="classList"></a>
 
 # classList(element, [ns]) ⇒ [<code>ClassList</code>](#ClassList)
-> Returns a ClassList object for a given element and namespace, using a cache to avoid unnecessary
-> object creation (when called with the same element and namespace, it will always return the same
-> object).
+> Returns a ClassList object for a given element and namespace, using a cache to avoid unnecessary> object creation (when called with the same element and namespace, it will always return the same> object).
 
 **Returns**: [<code>ClassList</code>](#ClassList) - a ClassList object for the given element and namespace  
 

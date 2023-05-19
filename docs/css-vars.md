@@ -21,8 +21,7 @@ return the same object)</p>
 <br><a name="CssVars"></a>
 
 # CssVars
-> CssVars objects allow to read / write CSS variables (custom properties) for the given element
-> (and eventual pseudo-element)
+> CssVars objects allow to read / write CSS variables (custom properties) for the given element> (and eventual pseudo-element)
 
 
 * [CssVars](#CssVars)
@@ -53,8 +52,7 @@ return the same object)</p>
 <br><a name="CssVars+has"></a>
 
 ## cssVars.has(name) ⇒ <code>boolean</code>
-> Checkes if the given variable name has been set for the given element. A variable is
-> considered to be set when the value is different from an empty string
+> Checkes if the given variable name has been set for the given element. A variable is> considered to be set when the value is different from an empty string
 
 
 | Param | Type | Description |
@@ -65,11 +63,9 @@ return the same object)</p>
 <br><a name="CssVars+get"></a>
 
 ## cssVars.get(name, [fallbackValue]) ⇒ <code>string</code> \| <code>number</code> \| <code>boolean</code> \| <code>Array</code> \| <code>object</code> \| <code>null</code>
-> Gets the value of a variable (cast to a suitable standard type) or the given fallbackValue
-> (or an empty string) when the variable is not set
+> Gets the value of a variable (cast to a suitable standard type) or the given fallbackValue> (or an empty string) when the variable is not set
 
-**Returns**: <code>string</code> \| <code>number</code> \| <code>boolean</code> \| <code>Array</code> \| <code>object</code> \| <code>null</code> - the variable value or the fallbackValue
-or an empty string when the variable is not set  
+**Returns**: <code>string</code> \| <code>number</code> \| <code>boolean</code> \| <code>Array</code> \| <code>object</code> \| <code>null</code> - the variable value or the fallbackValueor an empty string when the variable is not set  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -80,11 +76,9 @@ or an empty string when the variable is not set
 <br><a name="CssVars+getString"></a>
 
 ## cssVars.getString(name, [fallbackValue]) ⇒ <code>string</code>
-> Exactly like the [get() method](#CssVars+get), but without casting the value type, it
-> will be returned as string
+> Exactly like the [get() method](#CssVars+get), but without casting the value type, it> will be returned as string
 
-**Returns**: <code>string</code> - the variable value as a string or the fallbackValue or an empty string when
-the variable is not set  
+**Returns**: <code>string</code> - the variable value as a string or the fallbackValue or an empty string whenthe variable is not set  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -95,8 +89,7 @@ the variable is not set
 <br><a name="CssVars+set"></a>
 
 ## cssVars.set(name, [value])
-> Sets one or more CSS variables. Plain objects and arrays are stored in their JSON
-> representation
+> Sets one or more CSS variables. Plain objects and arrays are stored in their JSON> representation
 
 
 | Param | Type | Description |
@@ -108,8 +101,7 @@ the variable is not set
 <br><a name="CssVars+remove"></a>
 
 ## cssVars.remove(name)
-> Removes a variable previously set with JS or in the inline style attribute. It cannot remove
-> a variable set by a separated CSS file or by a <style> element.
+> Removes a variable previously set with JS or in the inline style attribute. It cannot remove> a variable set by a separated CSS file or by a <style> element.
 
 
 | Param | Type | Description |
@@ -144,9 +136,7 @@ the variable is not set
 <br><a name="cssVars"></a>
 
 # cssVars(element, [pseudoElement]) ⇒ [<code>CssVars</code>](#CssVars)
-> Returns a CssVars object for a given element and optional pseudo-element, using a cache to avoid
-> unnecessary object creation (when called with the same element and pseudo-element, it will always
-> return the same object)
+> Returns a CssVars object for a given element and optional pseudo-element, using a cache to avoid> unnecessary object creation (when called with the same element and pseudo-element, it will always> return the same object)
 
 **Returns**: [<code>CssVars</code>](#CssVars) - a CssVars object for the given element and pseudo-element  
 

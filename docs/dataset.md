@@ -21,8 +21,7 @@ object)</p>
 <br><a name="Dataset"></a>
 
 # Dataset
-> Dataset objects allow to do typical CRUD operations on an element's data attributes, with support
-> for a namespace
+> Dataset objects allow to do typical CRUD operations on an element's data attributes, with support> for a namespace
 
 
 * [Dataset](#Dataset)
@@ -53,8 +52,7 @@ object)</p>
 <br><a name="Dataset+has"></a>
 
 ## dataset.has(name) ⇒ <code>boolean</code>
-> Gives true if the data attribute with the given name (after applying an eventual namespace)
-> exists on the element
+> Gives true if the data attribute with the given name (after applying an eventual namespace)> exists on the element
 
 
 | Param | Type | Description |
@@ -65,12 +63,9 @@ object)</p>
 <br><a name="Dataset+get"></a>
 
 ## dataset.get([name], [fallbackValue]) ⇒ <code>string</code> \| <code>number</code> \| <code>boolean</code> \| <code>Array</code> \| <code>object</code> \| <code>null</code>
-> Retrieve a data attribute value or all of them as long as they match the previously set
-> namespace. Returned values are casted to the proper type among boolean, numbers, array and
-> object (when they are encoded as JSON)
+> Retrieve a data attribute value or all of them as long as they match the previously set> namespace. Returned values are casted to the proper type among boolean, numbers, array and> object (when they are encoded as JSON)
 
-**Returns**: <code>string</code> \| <code>number</code> \| <code>boolean</code> \| <code>Array</code> \| <code>object</code> \| <code>null</code> - the retrieved value or values after
-casting them in the proper type or the fallbackValue  
+**Returns**: <code>string</code> \| <code>number</code> \| <code>boolean</code> \| <code>Array</code> \| <code>object</code> \| <code>null</code> - the retrieved value or values aftercasting them in the proper type or the fallbackValue  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -81,11 +76,9 @@ casting them in the proper type or the fallbackValue
 <br><a name="Dataset+getString"></a>
 
 ## dataset.getString([name], [fallbackValue]) ⇒ <code>string</code> \| <code>object</code> \| <code>null</code>
-> Exactly like the [get() method](#Dataset+get), but without casting the value types, they
-> will be returned as string
+> Exactly like the [get() method](#Dataset+get), but without casting the value types, they> will be returned as string
 
-**Returns**: <code>string</code> \| <code>object</code> \| <code>null</code> - the retrieved value or values as strings
-or the fallbackValue.  
+**Returns**: <code>string</code> \| <code>object</code> \| <code>null</code> - the retrieved value or values as stringsor the fallbackValue.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -96,8 +89,7 @@ or the fallbackValue.
 <br><a name="Dataset+set"></a>
 
 ## dataset.set(name, [value])
-> Sets one or more data attributes values, after applying the namespace to their name. Plain
-> objects and arrays are stored in their JSON representation
+> Sets one or more data attributes values, after applying the namespace to their name. Plain> objects and arrays are stored in their JSON representation
 
 
 | Param | Type | Description |
@@ -144,9 +136,7 @@ or the fallbackValue.
 <br><a name="dataset"></a>
 
 # dataset(element, [ns]) ⇒ [<code>Dataset</code>](#Dataset)
-> Returns a Dataset object for a given element and namespace, using a cache to avoid unnecessary
-> object creation (when called with the same element and namespace, it will always return the same
-> object)
+> Returns a Dataset object for a given element and namespace, using a cache to avoid unnecessary> object creation (when called with the same element and namespace, it will always return the same> object)
 
 **Returns**: [<code>Dataset</code>](#Dataset) - a Dataset object for the given element and namespace  
 
@@ -183,8 +173,7 @@ or the fallbackValue.
 <br><a name="dataset.selector"></a>
 
 ## dataset.selector(name, [value], [ns]) ⇒ <code>string</code>
-> Returns a CSS selector in the form [data-ns-name] or [data-ns-name="value"] for the given
-> attribute name and value, taking into account the namespace.
+> Returns a CSS selector in the form [data-ns-name] or [data-ns-name="value"] for the given> attribute name and value, taking into account the namespace.
 
 **Returns**: <code>string</code> - the generated CSS selector  
 

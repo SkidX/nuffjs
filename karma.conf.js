@@ -30,7 +30,9 @@ module.exports = function (config) {
 		preprocessors[srcFile] = ['rollup', 'sourcemap', 'coverage'];
 	}
 
-	const coverageReporters = [{type: 'html', subdir: (browser) => browser.toLowerCase().split(/[ /-]/)[0]}];
+	const coverageReporters = [
+		{type: 'html', subdir: (browser) => browser.toLowerCase().split(/[ /-]/)[0]},
+	];
 	const reporters = ['progress', 'summary'];
 	if (coverage) {
 		coverageReporters.push({type: 'text'});

@@ -30,8 +30,7 @@ May be practical if you needs to perform several event-related calls.</p>
 <br><a name="EventListener"></a>
 
 # EventListener
-> EventListener objects are thenable objects that allows to remove the listener and get a promise
-> resolved after the event has been dispatched.
+> EventListener objects are thenable objects that allows to remove the listener and get a promise> resolved after the event has been dispatched.
 
 
 * [EventListener](#EventListener)
@@ -78,9 +77,7 @@ May be practical if you needs to perform several event-related calls.</p>
 <br><a name="WrappedEventTarget"></a>
 
 # WrappedEventTarget
-> Object that wraps another object (the event target) in order to call listen() or dispatch() event
-> without repeating the target every time.
-> May be practical if you needs to perform several event-related calls.
+> Object that wraps another object (the event target) in order to call listen() or dispatch() event> without repeating the target every time.> May be practical if you needs to perform several event-related calls.
 
 
 * [WrappedEventTarget](#WrappedEventTarget)
@@ -112,8 +109,7 @@ May be practical if you needs to perform several event-related calls.</p>
 ## wrappedEventTarget.dispatch()
 > Dispatches an event.
 
-**See**: [dispatch() function](#dispatch) for details about the parameters and the return
-value  
+**See**: [dispatch() function](#dispatch) for details about the parameters and the returnvalue  
 
 <br><a name="listen"></a>
 

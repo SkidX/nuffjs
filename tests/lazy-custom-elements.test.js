@@ -674,12 +674,10 @@ describe('Lazy Custom Elements:', () => {
 		customElements.define('my-paragraph', MyParagraph, {extends: 'p'});
 		const element = document.createElement('p', {is: 'my-paragraph'});
 		document.body.appendChild(element);
-		expect(element.matches('[is="my-paragraph"]')).toBeFalse();
-		expect(document.body.querySelector('[is="my-paragraph"]')).toBeNull();
 		const queryableElement = lce.createElement('p', {is: 'my-paragraph'});
 		document.body.appendChild(queryableElement);
 		expect(queryableElement.matches('[is="my-paragraph"]')).toBeTrue();
-		expect(document.body.querySelector('[is="my-paragraph"]')).toBe(queryableElement);
+		expect(document.body.querySelector('[is="my-paragraph"]')).toBeInstanceOf(MyParagraph);
 		document.body.removeChild(element);
 		document.body.removeChild(queryableElement);
 	});

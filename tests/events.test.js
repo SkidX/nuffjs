@@ -71,7 +71,9 @@ describe('Events:', () => {
 		container.click();
 		subContent.click();
 		expect(evs.handler).toHaveBeenCalledTimes(2);
-		const delegatedListener = listen(container, 'click', evs.delegatedHandler, {selector: '.content'});
+		const delegatedListener = listen(container, 'click', evs.delegatedHandler, {
+			selector: '.content',
+		});
 		container.click();
 		subContent.click();
 		listener.unlisten();
@@ -94,7 +96,9 @@ describe('Events:', () => {
 		const listener = listen(container, 'click', evs.handler);
 		subContent.click();
 		expect(target1).toBe(container);
-		const delegatedListener = listen(container, 'click', evs.delegatedHandler, {selector: '.content'});
+		const delegatedListener = listen(container, 'click', evs.delegatedHandler, {
+			selector: '.content',
+		});
 		subContent.click();
 		expect(target2).toBe(content);
 		listener.unlisten();
@@ -462,12 +466,17 @@ describe('Events:', () => {
 		dispatch(subContent, 'test2', {late: true});
 		let eventType1;
 		let eventType2;
-		const listener1 = listen(container, 'test1 test2', handlers.handler, {late: true, selector: '.content'}).then((event) => {
+		const listener1 = listen(container, 'test1 test2', handlers.handler, {
+			late: true,
+			selector: '.content',
+		}).then((event) => {
 			eventType1 = event.type;
 		});
-		const listener2 = listen(container, 'test1 test2', handlers.handler, {late: true}).then((event) => {
-			eventType2 = event.type;
-		});
+		const listener2 = listen(container, 'test1 test2', handlers.handler, {late: true}).then(
+			(event) => {
+				eventType2 = event.type;
+			}
+		);
 
 		listen(container, 'test3', handlers.handler3, {late: true});
 
