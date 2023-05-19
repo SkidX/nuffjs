@@ -1,0 +1,10 @@
+{
+	"include": ["src/classlist.js", "src/css-vars.js", "src/dataset.js", "src/events.js", "src/lazy-custom-elements.js", "src/nuff.js"],
+	"compilerOptions": {
+		"allowJs": true,
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"outDir": "dist",
+		"declarationMap": true
+	}
+}

@@ -1,0 +1,60 @@
+{
+  "name": "nuffjs",
+  "version": "0.1.0",
+  "description": "NUFF is a small collection of tiny independent libraries that aim to solve simple issues.",
+  "keywords": ["nuff", "library", "lazy", "components", "web components", "custom elements", "customElements", "lazy loading", "events", "dataset", "classList", "css variables", "custom properties"],
+  "license": "Artistic-2.0",
+  "homepage": "https://github.com/SkidX/nuffjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SkidX/nuffjs"
+  },
+  "bugs": {
+    "url": "https://github.com/SkidX/nuffjs/issues"
+  },
+  "main": "dist/nuff.js",
+  "module": "dist/nuff.es.js",
+  "types": "dist/nuff.d.ts",
+  "author": {
+    "name": "Federico Orru'",
+    "email": "federico@buzzler.com",
+    "url": "https://buzzler.com"
+  },
+  "scripts": {
+    "build": "rollup --config",
+    "watch": "rollup --config --watch",
+    "test": "karma start",
+    "test-no-coverage": "karma start --noCoverage",
+    "test-dataset": "rollup --config --config_lib=dataset && karma start --lib=dataset",
+    "test-classlist": "rollup --config --config_lib=classlist && karma start --lib=classlist",
+    "test-css-vars": "rollup --config --config_lib=css-vars && karma start --lib=css-vars",
+    "test-events": "rollup --config --config_lib=events && karma start --lib=events",
+    "test-lazy-custom-elements": "rollup --config --config_lib=lazy-custom-elements && karma start --lib=lazy-custom-elements",
+    "docs": "node scripts/build-docs.mjs"
+  },
+  "devDependencies": {
+    "@chiragrupani/karma-chromium-edge-launcher": "^2.2.2",
+    "@rollup/plugin-eslint": "^8.0.2",
+    "@types/node": "^20.2.1",
+    "dmd-readable": "^1.2.4",
+    "eslint": "^8.19.0",
+    "jasmine-core": "^4.6.0",
+    "jsdoc-to-markdown": "^8.0.0",
+    "karma": "^6.4.0",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-coverage": "^2.2.0",
+    "karma-firefox-launcher": "^2.1.2",
+    "karma-inject-html": "0.0.1",
+    "karma-jasmine": "^5.1.0",
+    "karma-rollup-preprocessor": "7.0.7",
+    "karma-sourcemap-loader": "^0.3.8",
+    "karma-summary-reporter": "^3.1.1",
+    "karma-viewport": "^1.0.9",
+    "prettier": "^2.7.1",
+    "rollup": "^2.76.0",
+    "rollup-plugin-filesize": "^9.1.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {}
+}

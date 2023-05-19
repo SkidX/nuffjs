@@ -1,0 +1,24 @@
+# external modules
+/node_modules/
+
+# generated files
+/dist/
+
+# coverage output
+/coverage/
+
+# log folder
+/log/*
+!/log/.keep
+
+# projectfiles
+.idea/
+.vscode/
+.VSCodeCounter/
+
+# OSX generated files
+.DS_Store
+.DS_Store?
+
+# local files
+todo.md
