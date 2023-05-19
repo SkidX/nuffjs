@@ -8,17 +8,38 @@ want to use them you would have to use a polyfill. I personally use
 [@ungap/custom-elements](https://github.com/ungap/custom-elements).
 
 
+- [Setup](#setup)
+- [Define custom elements and custom built-in elements synchrounously](#define-sync)
+- [Define custom elements and custom built-in elements asynchrounously](#define-async)
+- [Get a defined constructor](#get)
+- [Check when a custom element has been defined](#when-defined)
+- [Control when a custom element will be defined](#control-autodefine)
+- [Upgrade elements](#upgrade)
+- [Interact with lazy-defined custom elements ](#interact)
+- [Programmatically create custom built-in elements that are selectable by "is" attribute](#create-selectable-elements)
+- [Autoloading elements media and resources](#autoload)
+- [Implement firstConnectedCallback() pattern](#first-connected-callback)
+- [Define custom built-in elements with multiple parents](#multiple-parents)
+- [Extend the base class](#extend)
+
+
+<a id="setup"></a>
+
 ## Setup
 
 ```
 npm install --save nuffjs;
 ```
 
+<a id="import"></a>
+
 ## Import
 
 ```js
 import {lazyCustomElements} from 'nuffjs';
 ```
+
+<a id="define-sync"></a>
 
 ## Define custom elements and custom built-in elements synchrounously
 
@@ -36,6 +57,8 @@ lazyCustomElements
 	.define('acme-my-paragraph', MyParagraph, {extends: 'p'});
 
 ```
+
+<a id="define-async"></a>
 
 ## Define custom elements and custom built-in elements asynchrounously
 
@@ -70,7 +93,9 @@ lazyCustomElements
 
 ```
 
-## Retrieve a defined constructor
+<a id="get"></a>
+
+## Get a defined constructor
 
 ```js
 import {lazyCustomElements} from 'nuffjs';
@@ -80,6 +105,8 @@ lazyCustomElements.define('acme-my-element', async () => (await import('./my-ele
 // since the definition can be asynchronous, also the retrieval is asynchronous
 const MyConstructor = await lazyCustomElements.get('acme-my-element'); // MyConstructor === MyElement
 ```
+
+<a id="when-defined"></a>
 
 ## Check when a custom element has been defined
 
@@ -93,6 +120,8 @@ await customElements.whenDefined('acme-my-element');
 await lazyCustomElements.whenDefined('acme-my-element');
 
 ```
+
+<a id="control-autodefine"></a>
 
 ## Control when a custom element will be defined
 
@@ -114,6 +143,8 @@ all be customized.
 <acme-another-component data-autodefine="false"></acme-my-component>
 ```
 
+<a id="upgrade"></a>
+
 ## Upgrade elements
 ```js
 import {lazyCustomElements} from 'nuffjs';
@@ -133,6 +164,8 @@ await lazyCustomElements.upgradeElement(myElement);
 await lazyCustomElements.upgradeElement(document.querySelectorAll('acme-another-element, acme-whatever-element'));
 ```
 
+
+<a id="interact"></a>
 
 ## Interact with lazy-defined custom elements 
 
@@ -159,6 +192,8 @@ const myElements = await lazyCustomElements.querySelectorAll(document, 'acme-my-
 const myElem = await lazyCustomElements.upgradeElement(document.querySelector('acme-my-element'));
 ```
 
+<a id="create-selectable-elements"></a>
+
 ## Programmatically create custom built-in elements that are selectable by "is" attribute
 
 ```js
@@ -175,6 +210,8 @@ console.log(myParagraph.matches('[is="acme-my-paragraph"]')); // false, WTF?!?
 const anotherParagraph = lazyCustomElements.createElement('p', {is: 'acme-my-paragraph'});
 console.log(anotherParagraph.matches('[is="acme-my-paragraph"]')); // true
 ```
+
+<a id="autoload"></a>
 
 ## Autoloading elements media and resources
 
@@ -215,6 +252,8 @@ class MyLazyComponent extends HTMLElement {
 ```
 
 
+<a id="first-connected-callback"></a>
+
 ## Implement firstConnectedCallback() pattern
 
 Custom elements' connectedCallback() could be called multiple times, if the elements get detached
@@ -249,6 +288,8 @@ await lazyCustomElements.upgradeElement(element);
 console.log(element instanceof MyComponent); // true
 ```
 
+
+<a id="multiple-parents"></a>
 
 ## Define custom built-in elements with multiple parents
 
@@ -288,6 +329,8 @@ const MyVeryGenericThing = (Base) =>
 lazyCustomElement.define('my-very-generic-thing-', MyVeryGenericThing, {extends: '*'});
 ```
 
+
+<a id="extend"></a>
 
 ## Extend the base class
 
