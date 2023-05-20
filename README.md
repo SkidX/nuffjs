@@ -53,3 +53,14 @@ Small utility to read / write CSS variables (custom properties) taking care of t
 
 740 B | [Tutorial](docs/css-vars-tutorial.md) | [API Docs](docs/css-vars.md)
 
+----
+
+## License
+
+NUFF  
+Copyright (c) Federico Orru' and Contributors  
+Licensed on the terms of The Artistic License 2.0
+
+---- 
+
+This project is tested with BrowserStack.
