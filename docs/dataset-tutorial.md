@@ -62,22 +62,22 @@ dataset.setNs('acme');
 
 const element = document.querySelector('#test');
 
-console.log(dataset(element).has('aaaTestNumber'));	// false
-console.log(dataset(element).has('bbb-test-bool'));	// false
-console.log(dataset(element).has('testString'));	// true
+console.log(dataset(element).has('aaaTestNumber')); // false
+console.log(dataset(element).has('bbb-test-bool')); // false
+console.log(dataset(element).has('testString')); // true
 
 // it could also be stored for convenience
 const ds = dataset(element);
 
-console.log(ds.has('testNumber'));	// false
-console.log(ds.has('testBool'));	// false
-console.log(ds.has('testString'));	// true
+console.log(ds.has('testNumber')); // false
+console.log(ds.has('testBool')); // false
+console.log(ds.has('testString')); // true
 
 // temporarily overriding the global namespace 
 console.log(dataset(element, '').has('aaaTestNumber'));	// true
 console.log(dataset(element, 'aaa').has('testNumber'));	// true
-console.log(dataset(element, 'bbb').has('testBool'));	// true
-console.log(dataset(element).has('testString'));		// true
+console.log(dataset(element, 'bbb').has('testBool')); // true
+console.log(dataset(element).has('testString')); // true
 ```
 
 
@@ -105,35 +105,35 @@ dataset.setNs('acme');
 const ds = dataset(element);
 
 // read single values 
-console.log(ds.get('testNumber'));				// 666
-console.log(ds.get('testString'));				// 'acme'
-console.log(ds.get('testBool') === false); 		// true
-console.log(ds.get('testArray')[1] === 7); 		// true
-console.log(ds.get('testObj').prop === 'test');	// true
+console.log(ds.get('testNumber')); // 666
+console.log(ds.get('testString')); // 'acme'
+console.log(ds.get('testBool') === false); // true
+console.log(ds.get('testArray')[1] === 7); // true
+console.log(ds.get('testObj').prop === 'test'); // true
 
 // read values as is, getting strings
-console.log(ds.getString('testNumber')); 			// '666'
-console.log(ds.getString('testBool') === 'false');	// true
-console.log(ds.getString('testArray'));				// '[6,7,8]'
-console.log(ds.getString('testObj')); 				// '{"prop":"test"}'
+console.log(ds.getString('testNumber')); // '666'
+console.log(ds.getString('testBool') === 'false'); // true
+console.log(ds.getString('testArray')); // '[6,7,8]'
+console.log(ds.getString('testObj')); // '{"prop":"test"}'
 
 // read value with fallback
-console.log(ds.get('whatever', 123));	// 123
+console.log(ds.get('whatever', 123)); // 123
 
 // read all values
 const data = ds.get();
-console.log(data.testNumber);			// 666
-console.log(data.testBool === false);	// true
-console.log(data.testArray[1] === 7);	// true
-console.log('whatever' in data);		// false
+console.log(data.testNumber); // 666
+console.log(data.testBool === false); // true
+console.log(data.testArray[1] === 7); // true
+console.log('whatever' in data); // false
 
 // read all with defaults values
 const allData = ds.get({
 	whatever: 456,
 });
-console.log(allData.testNumber);	// 666
-console.log('whatever' in allData);	// true
-console.log(allData.whatever);		// 456
+console.log(allData.testNumber); // 666
+console.log('whatever' in allData); // true
+console.log(allData.whatever); // 456
 
 ```
 
@@ -216,12 +216,12 @@ import {dataset} from 'nuffjs';
 dataset.setNs('acme');
 
 // getting an attribute name
-console.log(dataset.attrName('testValueX')); 		// 'data-acme-test-value-x'
-console.log(dataset.attrName('testValueX', 'xyz'));	// 'data-xyz-test-value-x'
+console.log(dataset.attrName('testValueX')); // 'data-acme-test-value-x'
+console.log(dataset.attrName('testValueX', 'xyz')); // 'data-xyz-test-value-x'
 
 // getting a selector
-console.log(dataset.selector('testValueX')); 			// '[data-acme-test-value-x]'
-console.log(dataset.selector('testValueX', 666));	// '[data-acme-test-value-x="666"]'
+console.log(dataset.selector('testValueX')); // '[data-acme-test-value-x]'
+console.log(dataset.selector('testValueX', 666)); // '[data-acme-test-value-x="666"]'
 ```
 
 

@@ -261,7 +261,7 @@ class LazyCustomElementRegistry {
 	 *
 	 * @param {(Document|Element)} node the document or node to be queried
 	 * @param {string} selectors a string containing one or more comma-separated selectors to match
-	 * @returns {?Element} returns the found element or null
+	 * @returns {Promise<?Element>} returns a promise that resolves with the found element or null
 	 */
 	async querySelector(node, selectors) {
 		if (!(node instanceof Document) && !(node instanceof Element)) {
@@ -279,10 +279,9 @@ class LazyCustomElementRegistry {
 	 * eventually lazy defined custom elements and an upgrade of the found elements.
 	 *
 	 * @param {(Document|Element)} node the document or node to be queried
-	 * @param {string} selectors a string containing one or more comma-separated selectors to
-	 * match
-	 * @returns {?NodeList} returns the found elements NodeList or null in case the node is not an
-	 * instance of Document or Element to be queried
+	 * @param {string} selectors a string containing one or more comma-separated selectors to match
+	 * @returns {Promise<?NodeList>} returns a promise that resolves with the found elements
+	 * NodeList or null in case the node is not an instance of Document or Element to be queried
 	 */
 	async querySelectorAll(node, selectors) {
 		if (!(node instanceof Document) && !(node instanceof Element)) {

@@ -108,14 +108,14 @@ import {classList} from 'nuffjs';
 classList.setNs('js-');
 const element = document.querySelector('#test');
 
-console.log(classList(element).contains('aaa'));		// true
-console.log(classList(element).contains('ddd'));		// false
-console.log(classList(element, '').contains('aaa'));	// false
+console.log(classList(element).contains('aaa')); // true
+console.log(classList(element).contains('ddd')); // false
+console.log(classList(element, '').contains('aaa')); // false
 console.log(classList(element, '').contains('js-aaa'));	// true
 
 const cl = classList(element, 'acme-');
-console.log(cl.contains('ddd'));	// true
-console.log(cl.contains('eee'));	// true
+console.log(cl.contains('ddd')); // true
+console.log(cl.contains('eee')); // true
 
 ```
 
@@ -196,9 +196,9 @@ for (const name of classList(element, 'acme-').values()) {
 }
 // logs: ddd, eee
 
-console.log(classList(element).length);				// 3
-console.log(classList(element, 'acme-').length);	// 2
-console.log(classList(element, 'test-').length);	// 0
+console.log(classList(element).length); // 3
+console.log(classList(element, 'acme-').length); // 2
+console.log(classList(element, 'test-').length); // 0
 
 ```
 
@@ -212,13 +212,13 @@ import {classList} from 'nuffjs';
 
 classList.setNs('js-');
 
-console.log(classList.className('aaa'));			// js-aaa
-console.log(classList.className('aaa', 'acme'));	// acme-aaa
-console.log(classList.className('aaa', ''));		// aaa
+console.log(classList.className('aaa')); // js-aaa
+console.log(classList.className('aaa', 'acme')); // acme-aaa
+console.log(classList.className('aaa', '')); // aaa
 
-console.log(classList.selector('aaa'));				// .js-aaa
-console.log(classList.selector('aaa bbb'));			// .js-aaa.js-bbb
-console.log(classList.selector(['aaa', 'bbb']));	// .js-aaa.js-bbb
+console.log(classList.selector('aaa')); // .js-aaa
+console.log(classList.selector('aaa bbb'));	// .js-aaa.js-bbb
+console.log(classList.selector(['aaa', 'bbb'])); // .js-aaa.js-bbb
 
 ```
 

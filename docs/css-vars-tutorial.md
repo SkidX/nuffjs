@@ -53,19 +53,19 @@ import {cssVars} from 'nuffjs';
 const element = document.querySelector('.test');
 const subElement = document.querySelector('.subTest');
 
-console.log(cssVars(element).has('testVar'));		// true
-console.log(cssVars(element).has('--testVar'));		// true
-console.log(cssVars(element).has('anotherVar'));	// false
-console.log(cssVars(subElement).has('testVar'));	// true
-console.log(cssVars(subElement).has('anotherVar'));	// true
+console.log(cssVars(element).has('testVar')); // true
+console.log(cssVars(element).has('--testVar')); // true
+console.log(cssVars(element).has('anotherVar')); // false
+console.log(cssVars(subElement).has('testVar')); // true
+console.log(cssVars(subElement).has('anotherVar')); // true
 element.style.setProperty('--whatever', 10);
-console.log(cssVars(element).has('whatever'));		// true
+console.log(cssVars(element).has('whatever')); // true
 
 // it could also be stored for convenience
 const vars = cssVars(element);
 
-console.log(vars.has('testVar'));		// true
-console.log(vars.has('anotherVar'));	// false
+console.log(vars.has('testVar')); // true
+console.log(vars.has('anotherVar')); // false
 
 ```
 
@@ -101,14 +101,14 @@ const subElement = document.querySelector('.subTest');
 const vars = cssVars(element);
 const subVars = cssVars(subElement);
 
-console.log(vars.get('testVar') + 1);		// 667
-console.log(vars.get('stringVar'));			// 'this is a string'
-console.log(subVars.get('testVar')[1]);		// 7
-console.log(subVars.get('anotherVar').b);	// 'BBB'
+console.log(vars.get('testVar') + 1); // 667
+console.log(vars.get('stringVar')); // 'this is a string'
+console.log(subVars.get('testVar')[1]); // 7
+console.log(subVars.get('anotherVar').b); // 'BBB'
 
 // read values as is, getting strings
-console.log(vars.getString('testVar'));		// '666'
-console.log(subVars.getString('testVar'));	// '[6,  7]'
+console.log(vars.getString('testVar')); // '666'
+console.log(subVars.getString('testVar')); // '[6,  7]'
 ```
 
 <a id="write-css-variables"></a>
