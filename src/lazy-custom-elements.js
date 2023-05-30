@@ -475,7 +475,9 @@ class LazyCustomElementRegistry {
 		if (!this.domObserver) {
 			this.domObserver = new MutationObserver((entries) => {
 				for (const entry of entries) {
-					for (const element of this.extractElements([...entry.addedNodes])) {
+					for (const element of this.extractElements(
+						[...entry.addedNodes].filter((node) => node instanceof Element)
+					)) {
 						this.prepareElement(element, false);
 					}
 				}
