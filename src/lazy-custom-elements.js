@@ -614,7 +614,7 @@ class LazyCustomElementRegistry {
 	 * definition
 	 * @param {object} componentEntry internal entry used to monitor the specific element
 	 */
-	autoload(element, entry, componentEntry) {
+	async autoload(element, entry, componentEntry) {
 		// we let the custom options to eventually override the global ones
 		const {autoloadAttribute, loadMethod, lazyValue} = assign({}, this.options, entry);
 		const hasAutoload = element.hasAttribute(autoloadAttribute);
@@ -631,20 +631,20 @@ class LazyCustomElementRegistry {
 			};
 			// when the attribute value is 'true' we trigger the load immediately
 			if (autoload === 'true') {
-				componentEntry.get().then(() => load());
+				await componentEntry.get();
+				load();
 			} else if (autoload === lazyValue) {
 				// otherwise when the element requires an lazy load we define a load promise that is
 				// going to be lazily resolved only when the element intersects
 				const autoloadPromise = new Promise((autoloadTrigger) => {
 					componentEntry.autoloadTrigger = autoloadTrigger;
 				});
-				// autoload call will be performed only after the element is defined and upgraded
-				componentEntry
-					.get()
-					.then(() => autoloadPromise)
-					.then(() => load());
 				// get a proper observer and start to observe the element
 				this.getObserver('autoload', entry).observe(element);
+				// autoload call will be performed only after the element is defined and upgraded
+				await componentEntry.get();
+				await autoloadPromise;
+				load();
 			}
 		}
 	}
