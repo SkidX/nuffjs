@@ -259,12 +259,16 @@ class LazyCustomElementRegistry {
 	 * Async equivalent of node.querySelector() followed by forcing a definition of the eventually
 	 * lazy defined custom element and an upgrade of the found element.
 	 *
-	 * @param {(Document|Element)} node the document or node to be queried
+	 * @param {(Document|Element|ShadowRoot)} node the document or node to be queried
 	 * @param {string} selectors a string containing one or more comma-separated selectors to match
 	 * @returns {Promise<?Element>} returns a promise that resolves with the found element or null
 	 */
 	async querySelector(node, selectors) {
-		if (!(node instanceof Document) && !(node instanceof Element)) {
+		if (
+			!(node instanceof Document) &&
+			!(node instanceof Element) &&
+			!(node instanceof ShadowRoot)
+		) {
 			return null;
 		}
 		const element = node.querySelector(selectors);
@@ -278,13 +282,17 @@ class LazyCustomElementRegistry {
 	 * Async equivalent of node.querySelectorAll() followed by forcing a definition of the
 	 * eventually lazy defined custom elements and an upgrade of the found elements.
 	 *
-	 * @param {(Document|Element)} node the document or node to be queried
+	 * @param {(Document|Element|ShadowRoot)} node the document or node to be queried
 	 * @param {string} selectors a string containing one or more comma-separated selectors to match
 	 * @returns {Promise<?NodeList>} returns a promise that resolves with the found elements
 	 * NodeList or null in case the node is not an instance of Document or Element to be queried
 	 */
 	async querySelectorAll(node, selectors) {
-		if (!(node instanceof Document) && !(node instanceof Element)) {
+		if (
+			!(node instanceof Document) &&
+			!(node instanceof Element) &&
+			!(node instanceof ShadowRoot)
+		) {
 			return null;
 		}
 		const elements = node.querySelectorAll(selectors);

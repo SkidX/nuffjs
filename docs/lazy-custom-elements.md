@@ -150,7 +150,7 @@ undefined
 
 | Param | Type | Description |
 | --- | --- | --- |
-| node | <code>Document</code>, <code>Element</code> | the document or node to be queried |
+| node | <code>Document</code>, <code>Element</code>, <code>ShadowRoot</code> | the document or node to be queried |
 | selectors | <code>string</code> | a string containing one or more comma-separated selectors to match |
 
 
@@ -165,7 +165,7 @@ NodeList or null in case the node is not an instance of Document or Element to b
 
 | Param | Type | Description |
 | --- | --- | --- |
-| node | <code>Document</code>, <code>Element</code> | the document or node to be queried |
+| node | <code>Document</code>, <code>Element</code>, <code>ShadowRoot</code> | the document or node to be queried |
 | selectors | <code>string</code> | a string containing one or more comma-separated selectors to match |
 
 
